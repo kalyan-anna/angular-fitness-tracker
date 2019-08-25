@@ -9,10 +9,13 @@ import { LoginComponent } from './auth/login/login.component';
 import { TraningComponent } from './traning/traning.component';
 import { CurrentTrainingComponent } from './traning/current-training/current-training.component';
 import { NewTrainingComponent } from './traning/new-training/new-training.component';
+import { StopTrainingComponent } from './traning/current-training/stop-training.component';
 import { PastTrainingComponent } from './traning/past-training/past-training.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HeaderComponent } from './navigation/header/header.component';
+import { SideNavListComponent } from './navigation/side-nav-list/side-nav-list.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CurrentTrainingComponent,
     NewTrainingComponent,
     PastTrainingComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    HeaderComponent,
+    SideNavListComponent,
+    StopTrainingComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +41,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [StopTrainingComponent]
 })
 export class AppModule {}
