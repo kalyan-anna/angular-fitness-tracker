@@ -11,7 +11,7 @@
       <a mat-list-item routerLink="/login" *ngIf="!isLoggedIn">Login</a>
       <a mat-list-item routerLink="/training" *ngIf="isLoggedIn">Training</a>
       <mat-list-item *ngIf="isLoggedIn">
-        <button mat-icon-button (click)="onLogout()">
+        <button mat-icon-button (click)="onLogout()" style="cursor: pointer">
           Logout
         </button>
       </mat-list-item>

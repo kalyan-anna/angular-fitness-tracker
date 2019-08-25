@@ -6,7 +6,6 @@ import {
   OnDestroy
 } from '@angular/core';
 import { AuthService } from 'src/app/auth/auth.service';
-import { Router } from '@angular/router';
 import { takeWhile } from 'rxjs/operators';
 
 @Component({
@@ -19,7 +18,7 @@ export class SideNavListComponent implements OnInit, OnDestroy {
   isLoggedIn = false;
   private alive = true;
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService) {}
 
   ngOnInit() {
     this.authService.authChange
@@ -29,7 +28,6 @@ export class SideNavListComponent implements OnInit, OnDestroy {
 
   onLogout() {
     this.authService.logout();
-    this.router.navigate(['/']);
   }
 
   onNavClick() {

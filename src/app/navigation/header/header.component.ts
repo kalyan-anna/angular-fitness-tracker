@@ -7,7 +7,6 @@ import {
 } from '@angular/core';
 import { AuthService } from 'src/app/auth/auth.service';
 import { takeWhile } from 'rxjs/operators';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -19,7 +18,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   isLoggedIn = false;
   private alive = true;
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService) {}
 
   ngOnInit() {
     this.authService.authChange
@@ -33,7 +32,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   onLogout() {
     this.authService.logout();
-    this.router.navigate(['/']);
   }
 
   ngOnDestroy() {
