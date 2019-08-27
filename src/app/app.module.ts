@@ -16,6 +16,19 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './navigation/header/header.component';
 import { SideNavListComponent } from './navigation/side-nav-list/side-nav-list.component';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+
+const config = {
+  apiKey: 'AIzaSyCXJE4zQZ7zgMeOpuVCAJmGkw_Fk0pUNZc',
+  authDomain: 'fitness-track-80596.firebaseapp.com',
+  databaseURL: 'https://fitness-track-80596.firebaseio.com',
+  projectId: 'fitness-track-80596',
+  storageBucket: 'fitness-track-80596.appspot.com',
+  messagingSenderId: '468854951347',
+  appId: '1:468854951347:web:32455bfe55521af0'
+};
 
 @NgModule({
   declarations: [
@@ -38,7 +51,10 @@ import { SideNavListComponent } from './navigation/side-nav-list/side-nav-list.c
     MaterialModule,
     FlexLayoutModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(config),
+    AngularFireDatabaseModule,
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent],

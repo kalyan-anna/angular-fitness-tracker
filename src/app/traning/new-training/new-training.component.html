@@ -9,7 +9,7 @@
           <mat-label>Favorite exercises</mat-label>
           <mat-select ngModel name="exerciseId" required>
             <mat-option
-              *ngFor="let exercise of exercises"
+              *ngFor="let exercise of exercises | async"
               [value]="exercise.id"
             >
               {{ exercise.name }}
